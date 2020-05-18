@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, mofei">
+    <meta name="keywords" content="MySQL_第一节, mofei">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | mofei</title>
+    <title>MySQL_第一节 | mofei</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">MySQL_第一节</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-17
+                    2020-05-18
                 </div>
                 
 
@@ -458,15 +458,82 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h3 id="一-数据库基础"><a href="#一-数据库基础" class="headerlink" title="一,数据库基础"></a>一,数据库基础</h3><ul>
+<li><strong>数据库（database）</strong>    保存有组织的数据的容器（通常是一个文件或一组文件）。<ul>
+<li>【注】通常使用数据库这个术语代表所使用的数据库软件，其实这是不正确的，确切地说，数据库软件应称为<strong>DBMS（数据库管理系统）</strong>，数据库是通过DBMS创建和操纵的容器。</li>
+</ul>
+</li>
+<li><strong>表（table）</strong>    某种特定类型数据的结构化清单。<ul>
+<li><strong>列（column）</strong>    表中的一个字段。所有表都是由一个或多个列组成的。</li>
+<li><strong>行（row）</strong>    表中的一个记录。</li>
+</ul>
+</li>
+<li><strong>数据类型（datatype）</strong>    所容许的数据的类型。每个表列都有相应的数据类型，，它限制（或容许）该列中存储的数据。</li>
+<li><strong>主键（primary key）</strong>        一列（或一组列），其值能够唯一区分表中每个行。<br>作为主键应满足的条件：<ul>
+<li>任意两行都不具有相同的主键值</li>
+<li>每个行都必须具有一个主键值（主键列不允许为NULL值）<h3 id="二，使用mysql命令行实用程序的注意点"><a href="#二，使用mysql命令行实用程序的注意点" class="headerlink" title="二，使用mysql命令行实用程序的注意点"></a>二，使用mysql命令行实用程序的注意点</h3></li>
+</ul>
+</li>
+<li>命令输入在 <strong>mysql&gt;</strong> 之后</li>
+<li>命令用 <strong>;</strong> 或 <strong>\g</strong> 结束，换句话说，仅按Enter不执行命令</li>
+<li>输入 <strong>help</strong> 或 <strong>\h</strong> 获得帮助，也可以输入更多的文本获得特定命令的帮助（如，输入help select获得使用SELECT语句的帮助）</li>
+<li>输入 <strong>quit</strong> 或 <strong>exit</strong> 退出命令行实用程序<h3 id="三，使用MySQL"><a href="#三，使用MySQL" class="headerlink" title="三，使用MySQL"></a>三，使用MySQL</h3></li>
+<li><strong>SHOW DATABASES;</strong>    返回可用数据库的一个列表。 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">DATABASES</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">+</span><span class="token comment" spellcheck="true">------------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Database</span>                     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------------------+</span>
+<span class="token operator">|</span> information_schema           <span class="token operator">|</span>
+<span class="token operator">|</span> jspmysql                     <span class="token operator">|</span>
+<span class="token operator">|</span> mysql                        <span class="token operator">|</span>
+<span class="token operator">|</span> test                         <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------------------+</span></code></pre>
+<ul>
+<li><strong>选择数据库</strong></li>
+</ul>
+<pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">USE</span> test<span class="token punctuation">;</span>
+<span class="token keyword">Database</span> changed</code></pre>
+<blockquote>
+<p>使用 <strong>“USE  数据库名称”</strong> 的形式使用数据库,USE语句并不返回任何结果。依赖于使用的客户机，显示某种形式的通知。例如，这里显示出的Database changed消息是mysql命令行实用程序在数据库选择成功后显示的。</p>
+</blockquote>
+<ul>
+<li>使用 <strong>“SHOW TABLES;”</strong> 或 <strong>“SHOW TABELS FROM 数据库名;”</strong>  返回当前选择的数据库内可用的列表。</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">TABLES</span> <span class="token keyword">FROM</span> mysql<span class="token punctuation">;</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">+</span><span class="token comment" spellcheck="true">---------------------------+</span>
+<span class="token operator">|</span> Tables_in_mysql           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------------------------+</span>
+<span class="token operator">|</span> columns_priv              <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">db</span>                        <span class="token operator">|</span>
+<span class="token operator">|</span> event                     <span class="token operator">|</span>
+<span class="token operator">|</span> func                      <span class="token operator">|</span>
+<span class="token operator">|</span> general_log               <span class="token operator">|</span>
+<span class="token operator">|</span> help_category             <span class="token operator">|</span>
+<span class="token operator">|</span> help_keyword              <span class="token operator">|</span>
+<span class="token operator">|</span> help_relation             <span class="token operator">|</span>
+<span class="token operator">|</span> help_topic                <span class="token operator">|</span>
+<span class="token operator">|</span> host                      <span class="token operator">|</span>
+<span class="token operator">|</span> ndb_binlog_index          <span class="token operator">|</span>
+<span class="token operator">|</span> plugin                    <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">proc</span>                      <span class="token operator">|</span>
+<span class="token operator">|</span> procs_priv                <span class="token operator">|</span>
+<span class="token operator">|</span> servers                   <span class="token operator">|</span>
+<span class="token operator">|</span> slow_log                  <span class="token operator">|</span>
+<span class="token operator">|</span> tables_priv               <span class="token operator">|</span>
+<span class="token operator">|</span> time_zone                 <span class="token operator">|</span>
+<span class="token operator">|</span> time_zone_leap_second     <span class="token operator">|</span>
+<span class="token operator">|</span> time_zone_name            <span class="token operator">|</span>
+<span class="token operator">|</span> time_zone_transition      <span class="token operator">|</span>
+<span class="token operator">|</span> time_zone_transition_type <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">user</span>                      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------------------------+</span></code></pre>
+<ul>
+<li><strong>“SHOW STATUS;”</strong>    用于显示广泛的服务器状态信息</li>
+<li><strong>“SHOW CREATE DATABASE;”</strong> 和 <strong>“SHOW CREATE TABLE;</strong> 分别用来显示创建特定数据库或表的MySQL语句</li>
+<li><strong>“SHOW GRANTS;”</strong> 用来显示授予用户（所有用户或特定用户）的安全权限</li>
+<li><strong>“SHOW ERRORS”</strong> 和 <strong>“SHOW WARNINGS;”</strong> 用来显示服务器错误或警告消息</li>
+</ul>
 
             </div>
             <hr/>
@@ -492,7 +559,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dashenmofi.github.io/2020/05/17/hello-world/">http://dashenmofi.github.io/2020/05/17/hello-world/</a>
+                    <a href="http://dashenmofi.github.io/2020/05/18/mysql_1/">http://dashenmofi.github.io/2020/05/18/mysql_1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -695,9 +762,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/05/18/mysql_1/">
                     <div class="card-image">
@@ -717,9 +785,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -728,6 +796,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -735,7 +804,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/05/17/hello-world/">
@@ -765,7 +834,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
