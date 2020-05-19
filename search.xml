@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>用GitHub和hexo搭建个人博客</title>
+      <link href="/2020/05/19/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <url>/2020/05/19/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一，准备工作"><a href="#一，准备工作" class="headerlink" title="一，准备工作"></a>一，准备工作</h3><ul><li><strong>安装:<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></strong><ul><li><a href="https://www.bilibili.com/video/BV11V411o7Zh" target="_blank" rel="noopener">安装及配置环境教程</a></li><li>利用 <strong>npm</strong> 安装国内淘宝镜像 <strong>cnpm</strong>，下载插件的速度会很可观。<strong>指令为：</strong><pre class=" language-powershell"><code class="language-powershell">  npm install <span class="token operator">-</span>g cnpm <span class="token operator">--</span>registry=https:<span class="token operator">/</span><span class="token operator">/</span>registry<span class="token punctuation">.</span>npm<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>org</code></pre></li><li>全局安装 <strong>hexo</strong> 博客,<strong>指令为：</strong><pre class=" language-powershell"><code class="language-powershell">  cnpm install hexo<span class="token operator">-</span><span class="token function">cli</span> <span class="token operator">-</span>g</code></pre></li></ul></li><li>创建Github账号</li><li><strong>安装:<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a></strong><ul><li><a href="https://blog.csdn.net/weixin_44950987/article/details/102619708" target="_blank" rel="noopener">Git的安装及使用教程（超详细）</a><h3 id="二，建立博客"><a href="#二，建立博客" class="headerlink" title="二，建立博客"></a>二，建立博客</h3></li></ul></li><li>在资源管理器中你认为理想的位置建立一个存放博客的文件夹 <strong>_blog</strong></li><li>在blog文件夹中右键进入<strong>Git Bush Here</strong></li><li>敲入指令：<strong>hexo init</strong>（初始化博客）<br><img src="https://img-blog.csdnimg.cn/2020051917391249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21vZmVpZ2VnZQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020051917391241.png" alt="在这里插入图片描述"></li><li>安装依赖包,指令为： <strong>npm install</strong></li><li>本地启动hexo博客，指令为：<strong>hexo s(hexo start)</strong>     &emsp;&emsp;就可以在本地浏览器输入<strong>localhost:4000</strong> 来查看结果<br><img src="https://img-blog.csdnimg.cn/20200519174805225.png" alt="在这里插入图片描述">  <img src="https://img-blog.csdnimg.cn/2020051917484663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21vZmVpZ2VnZQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">  <h3 id="三，部署到Github上"><a href="#三，部署到Github上" class="headerlink" title="三，部署到Github上"></a>三，部署到Github上</h3></li><li>在Github上建立部署博客的仓库，而且仓库名格式必须为：<strong>用户名.github.io</strong><br><img src="https://img-blog.csdnimg.cn/2020051918362797.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21vZmVpZ2VnZQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li><li>修改配置文件<ul><li>复制链接<br><img src="https://img-blog.csdnimg.cn/20200519183549515.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21vZmVpZ2VnZQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li><li>打开 <strong>_blog/_config.yml</strong> ,翻到文件的最底下，修改并添加如下代码：<pre class=" language-powershell"><code class="language-powershell">deploy:<span class="token function">type</span>: gitrepo: git@github<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>mofi<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token punctuation">.</span>git<span class="token comment" spellcheck="true">#此位置为上边复制的仓库连接</span>branch: master</code></pre></li></ul></li><li>一键部署<ul><li>通过 hexo-deployer-git 插件可以实现一键将博客同时部署到多个git仓库中。如同时发布到github及gitee提供的pages服务。  </li></ul></li></ul><pre><code>    ```yaml    cnpm install hexo-deployer-git --save    ```</code></pre><ul><li>清除缓存文件：<strong>hexo clean</strong><br>&emsp;<strong>[注]</strong> 有时候部署的文件博客页面没发生变化，这时你就可以先清除一下缓存，然后用下边那个指令再发布到Github上。</li><li>通过指令 <strong>hexo g -d</strong> 即可实现一键发布，并更新CDN缓存。</li></ul><blockquote><p>hexo g 全拼为 hexo generate  意义是：生成静态文件<br>hexo -d 全拼为 hexo -deploy  意义是：文件生成后立即部署网站  </p></blockquote><p><strong>至此，个人博客就搭建完成了，但是呢还没有完，因为还有更换博客主题（其中的样式，特效等等），发布文章等着你去探索。当然，主题我也已经给你找好了，如果不喜欢，可以到hexo主题官网去寻找心仪的主题。</strong></p><ul><li><p><strong>传送门：</strong> <a href="https://blog.csdn.net/jspnetcn/article/details/104111651" target="_blank" rel="noopener">基于Hexo的matery主题搭建博客并优化</a></p></li><li><p><strong>传送门：</strong>  <a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo主题官网</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL_第一节</title>
       <link href="/2020/05/18/mysql_1/"/>
       <url>/2020/05/18/mysql_1/</url>
